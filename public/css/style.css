@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1f1f2f;
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+.currency-selector button, .buy-btn {
+    background-color: #292942;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-btn {
+    background-color: #00d9ff;
+    color: #292942;
+}
+
+.connect-telegram button {
+    background-color: #00d9ff;
+    color: #292942;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.price-changes, .percent-changes {
+    text-align: center;
+    
+}
+
+.price-changes div, .percent-changes div {
+    font-size: 24px;
+}
+
+.best-price {
+    text-align: center;
+}
+
+.best-price h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.best-price p {
+    font-size: 14px;
+    color: #bbbbbb;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+table th {
+    background-color: #292942;
+    color: #00d9ff;
+}
+
+table td {
+    background-color: #2f2f44;
+}
+
+.negative {
+    color: #ff5f5f;
+}
+
+.positive {
+    color: #00ff85;
+}
+
+.neutral {
+    color: #f0e442;
+}
+
+.add-to-home {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.add-to-home button {
+    background-color: #00d9ff;
+    color: #292942;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

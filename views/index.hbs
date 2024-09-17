@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">HODLINFO</div>
+            <div class="currency-selector">
+                <button>INR</button>
+                <button>BTC</button>
+                <button class="buy-btn">BUY BTC</button>
+                 
+            </div>
+            <div >
+                <h3>Next data refresh in <span id="countdown" style="color:rgb(7, 233, 233);">60</span> seconds</h3>
+            </div>
+            <div class="connect-telegram">
+                
+                <button>Connect Telegram</button>
+            </div>
+        </header>
+
+        <div class="price-info">
+            <div class="price-changes">
+                <div><span style="color:rgb(7, 233, 233);">0.1%</span><br>5 Mins</div>
+            </div>
+            <div class="price-changes">
+            <div><span style="color:rgb(7, 233, 233);">0.96%</span><br>1 Hour</div> </div>
+            <div class="best-price">
+                <p>Best Price to Trade</p>
+                <h1>₹ 26,56,110</h1>
+                <p>Average BTC/INR net price including commission</p>
+            </div>
+            <div class="percent-changes">
+                <div><span style="color:rgb(7, 233, 233);">2.73%</span><br><span>1 Day</span></div>  
+            </div>
+            <div class="percent-changes">
+             <div><span style="color:rgb(7, 233, 233);">7.51%</span><br><span>7 Days</span></div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                    <th>#</th>
+                    <th>Platform</th>
+                    <th>Last Traded Price</th>
+                    <th>Buy / Sell Price</th>
+                    <th>Difference</th>
+                    <th>Savings</th>
+            </thead>
+             <tbody>
+            {{#each cryptoData}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{last}}</td>
+                <td>{{buy}} / {{sell}}</td>
+                <td>{{volume}}</td>
+                <td>{{volume}}</td>
+               
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+        </table>
+        
+        <div class="add-to-home">
+            <button>Add hodlinfo to home screen</button>
+        </div>
+    </div>
+
+    <script>
+        let countdownTime = 60; 
+        
+        // Function to update the countdown timer every second
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            
+            const countdownInterval = setInterval(() => {
+                countdownTime--;
+                countdownElement.textContent = countdownTime;
+
+                // If countdown reaches zero, fetch new data and reset countdown
+                if (countdownTime === 0) {
+                    fetchCryptoData(); 
+                    countdownTime = 60; 
+                }
+            }, 1000); 
+        }
+
+        // Function to fetch new data from the server
+        function fetchCryptoData() {
+            fetch('/fetch-crypto')
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Crypto data successfully updated.');
+                    } else {
+                        console.error('Error fetching crypto data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Network error:', error);
+                });
+        }
+
+        
+        startCountdown();
+
+    </script>
+
+
+</body>
+</html>

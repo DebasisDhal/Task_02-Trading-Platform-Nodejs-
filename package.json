@@ -1,0 +1,20 @@
+{
+  "name": "dynamic_website",
+  "version": "1.0.0",
+  "description": "This is the project for dynamic_website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "author": "Debasis Dhal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "hbs": "^4.2.0",
+    "mysql2": "^3.11.3",
+    "path": "^0.12.7"
+  }
+}
